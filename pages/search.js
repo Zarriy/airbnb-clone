@@ -4,6 +4,7 @@ import Footer from "@/components/footer";
 import { useRouter } from "next/router";
 import format from "date-fns/format";
 import InfoCard from "@/components/infoCard";
+import Mapp from "@/components/map";
 
 export default function Search({ searchResults }) {
   const router = useRouter();
@@ -45,6 +46,10 @@ export default function Search({ searchResults }) {
               <InfoCard {...item} key={i} />
             ))}
           </div>
+        </section>
+
+        <section className="hidden xl:inline-flex xl:min-w-[600px] xl:max-h-[600px]">
+          <Mapp searchResults={searchResults} />
         </section>
       </main>
 
